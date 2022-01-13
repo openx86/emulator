@@ -12,6 +12,8 @@ public:
     static uint32_t IP_r;
     static uint16_t IP();
     static uint32_t EIP();
+    static void IP(uint16_t value);
+    static void EIP(uint32_t value);
 };
 
 

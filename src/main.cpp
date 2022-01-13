@@ -9,6 +9,14 @@ int main() {
     printf("ProgramRegister::IP() = 0x%04X\n", ProgramRegister::IP());
     printf("ProgramRegister::EIP() = 0x%08X\n", ProgramRegister::EIP());
 
+    ProgramRegister::IP(0xABCD);
+    printf("ProgramRegister::IP() = 0x%04X\n", ProgramRegister::IP());
+    printf("ProgramRegister::EIP() = 0x%08X\n", ProgramRegister::EIP());
+
+    ProgramRegister::EIP(0xABCD);
+    printf("ProgramRegister::IP() = 0x%04X\n", ProgramRegister::IP());
+    printf("ProgramRegister::EIP() = 0x%08X\n", ProgramRegister::EIP());
+
     printf("GeneralRegister::EAX() = 0x%08X\n", GeneralRegister::EAX());
     printf("GeneralRegister::AX() = 0x%04X\n", GeneralRegister::AX());
     printf("GeneralRegister::AH() = 0x%02X\n", GeneralRegister::AH());
