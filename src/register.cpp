@@ -2,16 +2,15 @@
 // Created by 86759 on 2022-01-12.
 //
 
+#include <cstring>
 #include "register.h"
 
-uint8_t ProgramRegister::IP_r[] = {0,0,0,0};
+uint32_t ProgramRegister::IP_r = 0x0000FFF0;
 uint16_t ProgramRegister::IP() {
-    uint32_t eip = (IP_r[3] << 0) + (IP_r[2] << 8);
-    return eip;
+    return (uint16_t)IP_r;
 }
 uint32_t ProgramRegister::EIP() {
-    uint32_t eip = (IP_r[3] << 0) + (IP_r[2] << 8) + (IP_r[1] << 16) + (IP_r[0] << 24);
-    return eip;
+    return (uint32_t)IP_r;
 }
 
 uint32_t GeneralRegister::EAX;
@@ -36,21 +35,12 @@ int GeneralRegister::init() {
     return 0;
 }
 
-uint16_t SegmentRegister::CS = 0x00000000;
-uint16_t SegmentRegister::SS = 0;
-uint16_t SegmentRegister::DS = 0;
-uint16_t SegmentRegister::ES = 0;
-uint16_t SegmentRegister::FS = 0;
-uint16_t SegmentRegister::GS = 0;
-int SegmentRegister::init() {
-    SegmentRegister::CS = 0;
-    SegmentRegister::SS = 0;
-    SegmentRegister::DS = 0;
-    SegmentRegister::ES = 0;
-    SegmentRegister::FS = 0;
-    SegmentRegister::GS = 0;
-    return 0;
-}
+uint16_t SegmentRegister::CS = 0xF000;
+uint16_t SegmentRegister::SS = 0x0000;
+uint16_t SegmentRegister::DS = 0x0000;
+uint16_t SegmentRegister::ES = 0x0000;
+uint16_t SegmentRegister::FS = 0x0000;
+uint16_t SegmentRegister::GS = 0x0000;
 
 uint32_t FlagsRegister::EFLAGS;
 int FlagsRegister::init() {

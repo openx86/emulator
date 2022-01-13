@@ -11,7 +11,7 @@
 
 class ProgramRegister {
 public:
-    static uint8_t IP_r[4];
+    static uint32_t IP_r;
     static uint16_t IP();
     static uint32_t EIP();
 };
@@ -38,7 +38,6 @@ public:
     static uint16_t ES;
     static uint16_t FS;
     static uint16_t GS;
-    static int init();
 };
 
 class FlagsRegister {
