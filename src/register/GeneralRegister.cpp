@@ -40,3 +40,30 @@ uint32_t GeneralRegister::ESI() { return SI_r; }
 uint32_t GeneralRegister::EDI() { return DI_r; }
 uint32_t GeneralRegister::EBP() { return BP_r; }
 uint32_t GeneralRegister::ESP() { return SP_r; }
+
+void GeneralRegister::AL(uint8_t value) { auto* tmp = (uint8_t *)(&AX_r); *tmp = value; }
+void GeneralRegister::BL(uint8_t value) { auto* tmp = (uint8_t *)(&BX_r); *tmp = value; }
+void GeneralRegister::CL(uint8_t value) { auto* tmp = (uint8_t *)(&CX_r); *tmp = value; }
+void GeneralRegister::DL(uint8_t value) { auto* tmp = (uint8_t *)(&DX_r); *tmp = value; }
+void GeneralRegister::AH(uint8_t value) { auto* tmp = (uint8_t *)(&AX_r); *tmp = value; }
+void GeneralRegister::BH(uint8_t value) { auto* tmp = (uint8_t *)(&BX_r); *tmp = value; }
+void GeneralRegister::CH(uint8_t value) { auto* tmp = (uint8_t *)(&CX_r); *tmp = value; }
+void GeneralRegister::DH(uint8_t value) { auto* tmp = (uint8_t *)(&DX_r); *tmp = value; }
+
+void GeneralRegister::AX(uint16_t value) { auto* tmp = (uint16_t *)(&AX_r); *tmp = value; }
+void GeneralRegister::BX(uint16_t value) { auto* tmp = (uint16_t *)(&BX_r); *tmp = value; }
+void GeneralRegister::CX(uint16_t value) { auto* tmp = (uint16_t *)(&CX_r); *tmp = value; }
+void GeneralRegister::DX(uint16_t value) { auto* tmp = (uint16_t *)(&DX_r); *tmp = value; }
+void GeneralRegister::SI(uint16_t value) { auto* tmp = (uint16_t *)(&SI_r); *tmp = value; }
+void GeneralRegister::DI(uint16_t value) { auto* tmp = (uint16_t *)(&DI_r); *tmp = value; }
+void GeneralRegister::BP(uint16_t value) { auto* tmp = (uint16_t *)(&BP_r); *tmp = value; }
+void GeneralRegister::SP(uint16_t value) { auto* tmp = (uint16_t *)(&SP_r); *tmp = value; }
+
+void GeneralRegister::EAX(uint32_t value) { auto* tmp = (uint32_t *)(&AX_r); *tmp = value; }
+void GeneralRegister::EBX(uint32_t value) { auto* tmp = (uint32_t *)(&BX_r); *tmp = value; }
+void GeneralRegister::ECX(uint32_t value) { auto* tmp = (uint32_t *)(&CX_r); *tmp = value; }
+void GeneralRegister::EDX(uint32_t value) { auto* tmp = (uint32_t *)(&DX_r); *tmp = value; }
+void GeneralRegister::ESI(uint32_t value) { auto* tmp = (uint32_t *)(&SI_r); *tmp = value; }
+void GeneralRegister::EDI(uint32_t value) { auto* tmp = (uint32_t *)(&DI_r); *tmp = value; }
+void GeneralRegister::EBP(uint32_t value) { auto* tmp = (uint32_t *)(&BP_r); *tmp = value; }
+void GeneralRegister::ESP(uint32_t value) { auto* tmp = (uint32_t *)(&SP_r); *tmp = value; }

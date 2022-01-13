@@ -46,6 +46,33 @@ public:
     static uint32_t EDI();
     static uint32_t EBP();
     static uint32_t ESP();
+
+    static void AL(uint8_t value);
+    static void BL(uint8_t value);
+    static void CL(uint8_t value);
+    static void DL(uint8_t value);
+    static void AH(uint8_t value);
+    static void BH(uint8_t value);
+    static void CH(uint8_t value);
+    static void DH(uint8_t value);
+
+    static void AX(uint16_t value);
+    static void BX(uint16_t value);
+    static void CX(uint16_t value);
+    static void DX(uint16_t value);
+    static void SI(uint16_t value);
+    static void DI(uint16_t value);
+    static void BP(uint16_t value);
+    static void SP(uint16_t value);
+
+    static void EAX(uint32_t value);
+    static void EBX(uint32_t value);
+    static void ECX(uint32_t value);
+    static void EDX(uint32_t value);
+    static void ESI(uint32_t value);
+    static void EDI(uint32_t value);
+    static void EBP(uint32_t value);
+    static void ESP(uint32_t value);
 };
 
 
