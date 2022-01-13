@@ -4,6 +4,12 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(emulator main.cpp)
 
+add_subdirectory(util)
+target_link_libraries(
+        emulator
+        bin
+)
+
 add_subdirectory(register)
 target_link_libraries(
         emulator
@@ -20,6 +26,3 @@ target_link_libraries(emulator decode)
 
 add_subdirectory(memory)
 target_link_libraries(emulator memory)
-
-add_library(util util.h util.cpp)
-target_link_libraries(emulator util)
