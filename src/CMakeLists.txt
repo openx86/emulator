@@ -18,5 +18,8 @@ target_link_libraries(
 add_subdirectory(decode)
 target_link_libraries(emulator decode)
 
+add_subdirectory(memory)
+target_link_libraries(emulator memory)
+
 add_library(util util.h util.cpp)
 target_link_libraries(emulator util)
