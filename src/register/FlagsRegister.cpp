@@ -4,4 +4,7 @@
 
 #include "FlagsRegister.h"
 
-uint32_t FlagsRegister::EFLAGS = 0x00000000;
+uint32_t FlagsRegister::EFLAGS_r = 0x00000000;
+
+uint32_t FlagsRegister::EFLAGS() { return EFLAGS_r; }
+void FlagsRegister::EFLAGS(uint32_t value) { EFLAGS_r = value; }

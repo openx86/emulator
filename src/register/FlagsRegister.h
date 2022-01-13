@@ -9,7 +9,9 @@
 
 class FlagsRegister {
 public:
-    static uint32_t EFLAGS;
+    static uint32_t EFLAGS_r;
+    static uint32_t EFLAGS();
+    static void EFLAGS(uint32_t value);
 };
 
 
