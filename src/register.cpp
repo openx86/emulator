@@ -4,6 +4,16 @@
 
 #include "register.h"
 
+uint8_t ProgramRegister::IP_r[] = {0,0,0,0};
+uint16_t ProgramRegister::IP() {
+    uint32_t eip = (IP_r[3] << 0) + (IP_r[2] << 8);
+    return eip;
+}
+uint32_t ProgramRegister::EIP() {
+    uint32_t eip = (IP_r[3] << 0) + (IP_r[2] << 8) + (IP_r[1] << 16) + (IP_r[0] << 24);
+    return eip;
+}
+
 uint32_t GeneralRegister::EAX;
 uint32_t GeneralRegister::EBX;
 uint32_t GeneralRegister::ECX;
@@ -26,12 +36,12 @@ int GeneralRegister::init() {
     return 0;
 }
 
-uint16_t SegmentRegister::CS;
-uint16_t SegmentRegister::SS;
-uint16_t SegmentRegister::DS;
-uint16_t SegmentRegister::ES;
-uint16_t SegmentRegister::FS;
-uint16_t SegmentRegister::GS;
+uint16_t SegmentRegister::CS = 0x00000000;
+uint16_t SegmentRegister::SS = 0;
+uint16_t SegmentRegister::DS = 0;
+uint16_t SegmentRegister::ES = 0;
+uint16_t SegmentRegister::FS = 0;
+uint16_t SegmentRegister::GS = 0;
 int SegmentRegister::init() {
     SegmentRegister::CS = 0;
     SegmentRegister::SS = 0;

@@ -7,6 +7,14 @@
 
 #include <cstdlib>
 #include <cstdint>
+#include <bitset>
+
+class ProgramRegister {
+public:
+    static uint8_t IP_r[4];
+    static uint16_t IP();
+    static uint32_t EIP();
+};
 
 class GeneralRegister {
 public:
@@ -43,6 +51,11 @@ class ControlRegister {
 public:
     static uint32_t CR[4];
     static int init();
+    static uint8_t PE() {
+        const auto CR0 = ControlRegister::CR[0];
+        std::bitset<sizeof(CR0)> CR0_bit(CR0);
+        return CR0_bit[0];
+    }
 };
 
 class SystemAddressRegister {
