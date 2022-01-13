@@ -28,7 +28,7 @@ int main() {
 //    uint8_t value[4] = {1,2,3,4};
 //    memory::store(0x00000008, 4, value);
 
-    const std::string bios_path(R"(D:\GitHub\cw1997\emulator\bios.bin)");
+    const std::string bios_path(R"(../bios.bin)");
 
     const bin bios_bin(bios_path);
 
