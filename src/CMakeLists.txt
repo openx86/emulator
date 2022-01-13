@@ -4,8 +4,16 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(emulator main.cpp)
 
-add_library(register register.h register.cpp)
-target_link_libraries(emulator register)
+add_subdirectory(register)
+target_link_libraries(
+        emulator
+        GeneralRegister
+        ProgramRegister
+        SegmentRegister
+        FlagsRegister
+        ControlRegister
+        SystemAddressRegister
+)
 
 add_library(util util.h util.cpp)
 target_link_libraries(emulator util)

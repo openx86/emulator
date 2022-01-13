@@ -7,7 +7,9 @@
 
 #include <bitset>
 
-#include "register.h"
+#include "register/ControlRegister.h"
+#include "register/SegmentRegister.h"
+#include "register/ProgramRegister.h"
 
 namespace util {
 
@@ -20,7 +22,7 @@ namespace util {
     bit_width get_current_bit() {
         const auto CR0 = ControlRegister::CR[0];
         std::bitset<sizeof(CR0)> CR0_bit(CR0);
-        const auto PE = CR0_bit[0];
+        const auto PE = ControlRegister::PE();
         if (PE == 0) {
             return bit_width::bit_8;
         } else {
