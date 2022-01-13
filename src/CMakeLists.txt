@@ -15,8 +15,8 @@ target_link_libraries(
         SystemAddressRegister
 )
 
+add_subdirectory(decode)
+target_link_libraries(emulator decode)
+
 add_library(util util.h util.cpp)
 target_link_libraries(emulator util)
-
-add_library(decode decode.h decode.cpp)
-target_link_libraries(emulator decode)
