@@ -12,11 +12,14 @@
 class ControlRegister {
 public:
     static uint32_t CR[4];
-    static uint8_t PE() {
-        const auto CR0 = ControlRegister::CR[0];
-        std::bitset<sizeof(CR0)> CR0_bit(CR0);
-        return CR0_bit[0];
-    }
+
+    static uint32_t CR0();
+    static uint32_t CR1();
+    static uint32_t CR2();
+    static uint32_t CR3();
+
+    static uint8_t PE();
+    static void PE(uint8_t value);
 };
 
 
