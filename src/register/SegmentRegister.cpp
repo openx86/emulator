@@ -17,3 +17,10 @@ uint16_t SegmentRegister::DS() { return DS_r; }
 uint16_t SegmentRegister::ES() { return ES_r; }
 uint16_t SegmentRegister::FS() { return FS_r; }
 uint16_t SegmentRegister::GS() { return GS_r; }
+
+void SegmentRegister::CS(uint16_t value) { CS_r = value; }
+void SegmentRegister::SS(uint16_t value) { SS_r = value; }
+void SegmentRegister::DS(uint16_t value) { DS_r = value; }
+void SegmentRegister::ES(uint16_t value) { ES_r = value; }
+void SegmentRegister::FS(uint16_t value) { FS_r = value; }
+void SegmentRegister::GS(uint16_t value) { GS_r = value; }
