@@ -8,7 +8,7 @@
 segment_descriptor_t load_descriptor(uint32_t value) {
     uint32_t descriptor_index = value >> 3;
     uint32_t offset = descriptor_index * 64/8;
-    const auto address = SystemAddressRegister::GDT + ;
+    const auto address = SystemAddressRegister::GDT + offset;
     const auto descriptor = (uint64_t)*address;
     segment_descriptor_t segment_descriptor;
     segment_descriptor.base =

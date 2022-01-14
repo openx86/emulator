@@ -4,25 +4,10 @@
 #include "register/ProgramRegister.h"
 #include "memory/memory.h"
 #include "util/bin.h"
+#include "execute/execute.h"
 
 int main() {
     printf("OpenX86 Emulator\n");
-
-    printf("ProgramRegister::IP() = 0x%04X\n", ProgramRegister::IP());
-    printf("ProgramRegister::EIP() = 0x%08X\n", ProgramRegister::EIP());
-
-    ProgramRegister::IP(0xABCD);
-    printf("ProgramRegister::IP() = 0x%04X\n", ProgramRegister::IP());
-    printf("ProgramRegister::EIP() = 0x%08X\n", ProgramRegister::EIP());
-
-    ProgramRegister::EIP(0xABCD);
-    printf("ProgramRegister::IP() = 0x%04X\n", ProgramRegister::IP());
-    printf("ProgramRegister::EIP() = 0x%08X\n", ProgramRegister::EIP());
-
-    printf("GeneralRegister::EAX() = 0x%08X\n", GeneralRegister::EAX());
-    printf("GeneralRegister::AX() = 0x%04X\n", GeneralRegister::AX());
-    printf("GeneralRegister::AH() = 0x%02X\n", GeneralRegister::AH());
-    printf("GeneralRegister::AL() = 0x%02X\n", GeneralRegister::AL());
 
 //    memory::init(1024 * 1024 * 128);
 //    uint8_t value[4] = {1,2,3,4};
@@ -40,6 +25,8 @@ int main() {
 //    }
 
 //    getchar();
+
+    execute::execute();
 
     return 0;
 }

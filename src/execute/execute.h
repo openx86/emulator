@@ -8,7 +8,7 @@
 #include <cstdint>
 
 namespace execute {
-    int execute();
+    [[noreturn]] void execute();
 };
 
 
