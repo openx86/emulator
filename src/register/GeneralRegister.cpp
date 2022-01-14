@@ -3,12 +3,13 @@
 //
 
 #include "GeneralRegister.h"
+#include "../definition.h"
 
 //uint32_t GeneralRegister::AX_r = 0x12345678;
 uint32_t GeneralRegister::AX_r = 0x00000000;
 uint32_t GeneralRegister::BX_r = 0x00000000;
 uint32_t GeneralRegister::CX_r = 0x00000000;
-uint32_t GeneralRegister::DX_r = 0x00000000;
+uint32_t GeneralRegister::DX_r = INIT_DX;
 uint32_t GeneralRegister::SI_r = 0x00000000;
 uint32_t GeneralRegister::DI_r = 0x00000000;
 uint32_t GeneralRegister::BP_r = 0x00000000;
