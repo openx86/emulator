@@ -1,3 +1,5 @@
+add_executable(emulator definition.h main.cpp)
+
 add_subdirectory(util)
 target_link_libraries(
         emulator
@@ -16,11 +18,15 @@ target_link_libraries(
         SystemAddressRegister
 )
 
-add_subdirectory(memory)
-target_link_libraries(emulator memory)
+add_library(
+        lib
+        memory.h memory.cpp
+        decode.h decode.cpp
+        execute.h execute.cpp
+)
 
-add_subdirectory(decode)
-target_link_libraries(emulator decode)
+target_link_libraries(
+        emulator
+        lib
+)
 
-add_subdirectory(execute)
-target_link_libraries(emulator execute)

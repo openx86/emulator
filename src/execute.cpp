@@ -2,17 +2,14 @@
 // Created by 86759 on 2022-01-13.
 //
 
-#include <unistd.h>
-#include "../definition.h"
 #include "execute.h"
-#include "../decode/decode.h"
-#include "../memory/memory.h"
-
-#include "../register/ControlRegister.h"
-#include "../register/SegmentRegister.h"
-#include "../register/ProgramRegister.h"
-#include "../register/GeneralRegister.h"
-#include "../util/debug.h"
+#include "util/debug.h"
+#include "decode.h"
+#include "memory.h"
+#include "register/ControlRegister.h"
+#include "register/SegmentRegister.h"
+#include "register/ProgramRegister.h"
+#include "register/GeneralRegister.h"
 
 uint32_t get_program_counter() {
     const auto PE = ControlRegister::PE();

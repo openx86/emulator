@@ -1,13 +1,14 @@
 #include <cstdio>
 
-#include "register/GeneralRegister.h"
-#include "register/ProgramRegister.h"
-#include "memory/memory.h"
+#include "memory.h"
 #include "util/bin.h"
-#include "execute/execute.h"
+//#include "execute.h"
+#include "util/debug.h"
 
 int main() {
     printf("OpenX86 Emulator\n");
+
+    debug::dump();
 
 //    memory::init(1024 * 1024 * 128);
 //    uint8_t value[4] = {1,2,3,4};
@@ -26,7 +27,7 @@ int main() {
 
 //    getchar();
 
-    execute::execute();
+//    execute::execute();
 
     return 0;
 }

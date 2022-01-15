@@ -6,27 +6,27 @@
 
 using namespace decode;
 
-bool _check_opcode_5_3(uint8_t source, uint8_t target) {
+bool check_opcode_5_3(uint8_t source, uint8_t target) {
     return _check_opcode<uint8_t>(0b0011'1000, source, target);
 }
 
-bool _check_opcode_7_3(uint8_t source, uint8_t target) {
+bool check_opcode_7_3(uint8_t source, uint8_t target) {
     return _check_opcode<uint8_t>(0b1111'1000, source, target);
 }
 
-sreg_e get_sreg2(uint8_t byte) {
+decode::sreg_e get_sreg2(uint8_t byte) {
     const uint8_t mask = 0b0011'1000;
-    sreg_e sreg = static_cast<sreg_e>((byte & mask) >> 3);
+    auto sreg = static_cast<decode::sreg_e>((byte & mask) >> 3);
     return sreg;
 }
 
-sreg_e get_sreg3(uint8_t byte) {
+decode::sreg_e get_sreg3(uint8_t byte) {
     const uint8_t mask = 0b0001'1000;
-    sreg_e sreg = static_cast<sreg_e>((byte & mask) >> 3);
+    auto sreg = static_cast<decode::sreg_e>((byte & mask) >> 3);
     return sreg;
 }
 
-uint32_t address_generate(uint8_t mod_rm) {
+uint32_t decode::address_generate(uint8_t mod_rm) {
     mod_rm &= 0b1100'0111;
     switch (mod_rm) {
         default:
@@ -54,7 +54,7 @@ bool is_MOV_rm_to_reg_w_1(const uint8_t *bytes) { return bytes[0] == 0x8B; }
 bool is_MOV_sreg_to_rm(const uint8_t *bytes) { return bytes[0] == 0x8C; }
 bool is_MOV_rm_to_sreg(const uint8_t *bytes) { return bytes[0] == 0x8D; }
 
-opcode_e decode_opcode(const uint8_t *bytes) {
+opcode_e decode::decode_opcode(const uint8_t *bytes) {
     if (is_HLT(bytes)) return opcode_e::HLT;
     if (is_NOP(bytes)) return opcode_e::NOP;
     if (is_prefix_REPE(bytes)) return opcode_e::prefix_REPE;

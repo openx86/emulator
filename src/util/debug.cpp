@@ -9,7 +9,7 @@
 
 using namespace debug;
 
-void dump() {
+void debug::dump() {
     printf("ProgramRegister::EIP() = 0x%08X\n", ProgramRegister::EIP());
     printf("GeneralRegister::EAX() = 0x%08X\n", GeneralRegister::EAX());
     printf("GeneralRegister::EBX() = 0x%08X\n", GeneralRegister::EBX());
