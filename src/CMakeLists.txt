@@ -1,32 +1,33 @@
 add_executable(emulator definition.h main.cpp)
 
-add_subdirectory(util)
+add_subdirectory(core)
 target_link_libraries(
         emulator
-        bin
-        debuger
+        execute
+        decode
+)
+
+add_subdirectory(interface)
+target_link_libraries(
+        emulator
+        memory
 )
 
 add_subdirectory(register)
 target_link_libraries(
         emulator
+        ControlRegister
+        FlagsRegister
         GeneralRegister
         ProgramRegister
         SegmentRegister
-        FlagsRegister
-        ControlRegister
         SystemAddressRegister
 )
 
-add_library(
-        lib
-        memory.h memory.cpp
-        decode.h decode.cpp
-        execute.h execute.cpp
-)
-
+add_subdirectory(util)
 target_link_libraries(
         emulator
-        lib
+        bin
+        debuger
 )
 

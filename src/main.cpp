@@ -1,9 +1,9 @@
 #include <cstdio>
 
-#include "memory.h"
+#include "interface/memory.h"
 #include "util/bin.h"
-#include "execute.h"
 #include "util/debug.h"
+#include "core/execute.h"
 
 int main() {
     printf("OpenX86 Emulator\n");

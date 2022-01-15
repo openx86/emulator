@@ -3,13 +3,13 @@
 //
 
 #include "execute.h"
-#include "util/debug.h"
 #include "decode.h"
-#include "memory.h"
-#include "register/ControlRegister.h"
-#include "register/SegmentRegister.h"
-#include "register/ProgramRegister.h"
-#include "register/GeneralRegister.h"
+#include "../util/debug.h"
+#include "../register/ControlRegister.h"
+#include "../register/SegmentRegister.h"
+#include "../register/ProgramRegister.h"
+#include "../register/GeneralRegister.h"
+#include "../interface/memory.h"
 
 uint32_t get_program_counter() {
     const auto PE = ControlRegister::PE();

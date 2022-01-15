@@ -1,6 +1,6 @@
+add_library(ControlRegister ControlRegister.h ControlRegister.cpp)
+add_library(FlagsRegister FlagsRegister.h FlagsRegister.cpp)
 add_library(GeneralRegister GeneralRegister.h GeneralRegister.cpp)
 add_library(ProgramRegister ProgramRegister.h ProgramRegister.cpp)
 add_library(SegmentRegister SegmentRegister.h SegmentRegister.cpp)
-add_library(FlagsRegister FlagsRegister.h FlagsRegister.cpp)
-add_library(ControlRegister ControlRegister.h ControlRegister.cpp)
 add_library(SystemAddressRegister SystemAddressRegister.h SystemAddressRegister.cpp)
