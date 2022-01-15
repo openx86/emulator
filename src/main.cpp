@@ -2,7 +2,7 @@
 
 #include "memory.h"
 #include "util/bin.h"
-//#include "execute.h"
+#include "execute.h"
 #include "util/debug.h"
 
 int main() {
@@ -27,7 +27,7 @@ int main() {
 
 //    getchar();
 
-//    execute::execute();
+    execute::execute();
 
     return 0;
 }
