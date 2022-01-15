@@ -12,7 +12,7 @@ public:
     FILE *fp;
     size_t size = 0;
     uint8_t* content;
-    bin(std::string path);
+    explicit bin(const std::string& path);
     ~bin();
 };
 

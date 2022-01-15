@@ -7,8 +7,6 @@
 #include "../register/GeneralRegister.h"
 #include "../register/ProgramRegister.h"
 
-using namespace debug;
-
 void debug::dump() {
     printf("ProgramRegister::EIP() = 0x%08X\n", ProgramRegister::EIP());
     printf("GeneralRegister::EAX() = 0x%08X\n", GeneralRegister::EAX());

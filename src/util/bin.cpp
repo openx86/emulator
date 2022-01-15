@@ -6,7 +6,7 @@
 
 #include <cstdio>
 
-bin::bin(std::string path) {
+bin::bin(const std::string& path) {
     fp = fopen(path.c_str(), "rb");
 
     if (fp) {

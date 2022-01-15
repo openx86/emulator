@@ -6,8 +6,9 @@
 #define EMULATOR_DEBUG_H
 
 
-namespace debug {
-    void dump();
+class debug {
+public:
+    static void dump();
 };
 
 
