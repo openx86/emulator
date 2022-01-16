@@ -1,1 +1,1 @@
-add_library(memory memory.h memory.cpp)
+add_library(memory memory.cpp)

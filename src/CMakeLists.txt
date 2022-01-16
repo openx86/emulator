@@ -3,12 +3,14 @@ add_executable(emulator definition.h main.cpp)
 add_subdirectory(interface)
 target_link_libraries(
         emulator
+        PUBLIC
         memory
 )
 
 add_subdirectory(core)
 target_link_libraries(
         emulator
+        PUBLIC
         execute
         decode
 )
@@ -16,6 +18,7 @@ target_link_libraries(
 add_subdirectory(util)
 target_link_libraries(
         emulator
+        PUBLIC
         bin
         debuger
 )
@@ -23,6 +26,7 @@ target_link_libraries(
 add_subdirectory(register)
 target_link_libraries(
         emulator
+        PUBLIC
         ControlRegister
         FlagsRegister
         GeneralRegister
@@ -30,5 +34,3 @@ target_link_libraries(
         SegmentRegister
         SystemAddressRegister
 )
-
-
