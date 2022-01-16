@@ -5,9 +5,13 @@
 #include "SystemAddressRegister.h"
 #include <cstring>
 
-uint64_t SystemAddressRegister::GDTR_r;
-uint64_t SystemAddressRegister::IDTR_r;
-//uint64_t SystemAddressRegister::LDTR_r;
+uint64_t SystemAddressRegister::GDTR_r = 0;
+uint64_t SystemAddressRegister::IDTR_r = 0;
+//uint64_t SystemAddressRegister::LDTR_r = 0;
+
+uint32_t* SystemAddressRegister::GDT = nullptr;
+uint32_t* SystemAddressRegister::IDT = nullptr;
+//    static uint32_t* LDT = nullptr;
 
 system_address_descriptor_t SystemAddressRegister::GDTR() {
     system_address_descriptor_t system_address_descriptor;
